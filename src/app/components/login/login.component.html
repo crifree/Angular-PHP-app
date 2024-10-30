@@ -1,0 +1,27 @@
+<h1>Login</h1>
+<form [formGroup]="loginForm"  method="POST">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" #email placeholder="Inserisci email">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" #password placeholder="Inserisci password">
+      </mat-form-field>
+
+      <div  class="error-message">
+        {{ loginError }}
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<div class="register">
+  <h3>don't have an account?</h3>
+  <a routerLink="/register">register here!</a>
+</div>
+
+
+
+    

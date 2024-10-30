@@ -1,0 +1,36 @@
+<div *ngIf="!isLoggedIn" class="noLog">
+      <h1>Welcome inside Home!</h1>
+      <p>Log in to see what's inside ;)</p>
+    </div>
+    
+    <div *ngIf="isLoggedIn">
+      <h1>To-Do List</h1>
+      <div id="toast"></div>
+      <div id="main">
+    
+        <!-- Container for incompleted tasks -->
+        <div id="container-list">
+          <h2>Tasks To-Do</h2>
+          <button (click)="addTask()">Add a task</button>
+          <button (click)="moveAllToDone()">Move to Done</button>
+          
+          <div *ngFor="let task of tasks; let i = index" class="task-container">
+            <input type="checkbox" class="check" [(ngModel)]="task.checked" (change)="onCheck(task, i)">
+            <textarea [(ngModel)]="task.text" type="text" class="task" placeholder="Write a task here!" (blur)="saveTasksToLocalStorage()"></textarea>
+          </div>
+        </div>
+    
+        <!-- Container for completed tasks -->
+        <div id="container-done">
+          <h2>Done Tasks</h2>
+          <button (click)="clearDoneTasks()">Delete all tasks</button>
+          <button (click)="moveAllToTasks()">Move To-Do</button>
+          
+          <div *ngFor="let task of doneTasks; let i = index" class="task-container">
+            <input type="checkbox" class="check" [(ngModel)]="task.checked" (change)="onCheck(task, i)">
+            <textarea [(ngModel)]="task.text" type="text" class="task" placeholder="Write a task here!"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    

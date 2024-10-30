@@ -1,0 +1,54 @@
+
+
+<h2>Registration Form</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <div class="firstname">
+    <input class="firstName" formControlName="firstName" type="text"  placeholder="firstname">
+    <div *ngIf="registerForm.get('firstname')?.invalid && registerForm.get('firstname')?.touched">
+      First name is required.
+    </div>
+  </div>
+
+  <div class="lastname">
+    <input formControlName="lastName" type="text" placeholder="Last Name">
+    <div *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched">
+      Last name is required.
+    </div>
+  </div>
+
+  <div class="email">
+    <input class="email" formControlName="email" type="email" placeholder="Email">
+    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+      Please enter a valid email.
+    </div>
+  </div>
+
+  <div class="password">
+    <input class="password" formControlName="password" type="password"  placeholder="Password">
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      Password is required.
+    </div>
+  </div>
+  
+  <div class="repass">
+    <input class="repass" formControlName="repass" type="password"  placeholder="Repeat Password">
+    <div *ngIf="registerForm.get('repass')?.invalid && registerForm.get('repass')?.touched">
+      Repeat password is required.
+    </div>
+  </div>
+  
+  <div class="btn">
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </div>
+</form>
+
+<div class="message">
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+  <div *ngIf="response" class="success-message">
+    {{ response }}
+  </div>
+</div>
+

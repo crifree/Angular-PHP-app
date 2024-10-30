@@ -1,0 +1,202 @@
+.header {
+      display: flex;
+      background-color: aquamarine;
+      color: blueviolet;
+      align-items: center;
+      height: 100px;
+      width: 100%;
+  }
+  
+  .header h1 {
+      padding: 10px;
+      margin: 0;
+      cursor: default;
+  }
+
+  
+@keyframes toast {
+      0% {
+        left: -300px; 
+        top: 20px;    
+      }
+      50% {
+        left: 20px;  
+        top: 20px;
+      }
+      100% {
+            left: -300px; 
+            top: 20px;   
+      }
+}
+    
+#toast {
+      max-width: 200px;
+      display: none; 
+      position: fixed; 
+      left: -300px; 
+      top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      animation-name: toast;
+      animation-duration: 3s;
+      animation-fill-mode: forwards; 
+}
+  
+  nav {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end; 
+      align-items: center; 
+      background-color: aquamarine;
+  }
+  
+  nav a {
+      text-decoration: none;
+      padding: 0 30px;
+      height: 100%; 
+      font-size: 30px;
+      color: blueviolet;
+      display: flex; 
+      align-items: center; 
+      cursor: pointer;
+  }
+  
+  nav a:hover,
+  nav a.active {
+      background-color: blueviolet; 
+      color: aquamarine; 
+  }
+
+  @media (min-width: 320px) {
+      .header {
+          height: 50px;
+      }
+  
+      .header h1 {
+          font-size: 30px;  
+      }
+
+      nav {
+            display: flex;
+            justify-content: flex-end;
+      }
+  
+      nav .links a {
+          font-size: 20px; 
+          height: 100%;
+          top: 0;
+          margin: 0;
+          padding: 10px;
+          display: block; 
+      }
+
+      .menu {
+            display: block;
+            position: absolute;
+            padding: 13px 13px 20px 13px;
+            height: auto;
+      }
+
+      .links {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        top: 144%;
+        max-height: 90px;
+        height: auto;
+        background-color: aliceblue;
+        border: solid blueviolet 3px;
+        overflow: hidden; 
+
+
+        } 
+  }
+  
+  @media (min-width: 576px) {
+
+      .header {
+            height: 60px;
+      }
+
+      .header h1 {
+          font-size: 35px; 
+      }
+  
+      nav .links a {
+            padding: 15px;
+            font-size: 22px;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+      }
+
+      .menu {
+            display: none;
+      }
+
+      .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            top: 0;
+            height: 100%;
+            background-color: aquamarine ;
+            border: none;
+      }
+  }
+  
+  @media (min-width: 768px) {
+
+      .header {
+            height: 70px;
+      }
+
+      .header h1 {
+          font-size: 40px; 
+      }
+  
+      nav a {
+            padding: 20px;
+          font-size: 24px; 
+      }
+  }
+  
+  @media (min-width: 992px) {
+
+      .header {
+            height: 85px;
+      }
+
+      .header h1 {
+          font-size: 45px;  
+      }
+  
+      nav a {
+            padding: 25px;
+          font-size: 26px;  
+      }
+  }
+  
+  @media (min-width: 1200px) {
+
+      .header {
+            height: 100px;
+      }
+
+      .header h1 {
+          font-size: 50px;  
+      }
+  
+      nav .links a {
+            padding: 30px;
+          font-size: 28px;  
+      }
+
+      .links {
+        max-height: 100px;
+        height: 100%;
+      }
+  }
+  

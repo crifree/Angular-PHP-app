@@ -1,0 +1,248 @@
+
+
+body {
+      margin: 0;
+}
+
+.noLog {
+      text-align: center;
+      font-size: 25px;
+}
+
+h1 {
+      text-align: center;  
+      font-size: 40px;  
+      color: aliceblue;
+      background-color: blueviolet;
+      cursor: default;
+      margin: 0;
+}
+
+h2 {
+      font-size: 35px;
+      cursor: default;
+}
+
+#main {
+      display: flex;
+      justify-content: space-evenly;
+}
+
+#container-list {
+      display: block;
+      width: 45%;
+}
+
+#container-done {
+      display: block;
+      width: 45%;
+}
+
+.task-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; 
+}
+
+button {
+      background-color: blueviolet;
+      color: aliceblue;
+      text-decoration: none;
+      border: none;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 15px;
+}
+
+button:hover {
+      cursor: pointer;
+      background-color: rgb(169, 57, 225);
+      color: rgb(255, 225, 32);
+      transition: background-color 1s, color 1s;
+}
+
+.check {
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid currentColor;
+      border-radius: 0.15em;
+      transform: translateY(-0.075em);
+      color: aquamarine;
+}
+
+textarea.task {
+      border: none; 
+      outline: none; 
+      background: none;
+      font-size: 16px; 
+      width: 100%; 
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px;
+      height: 100%;
+      width: 80%;
+}
+
+textarea.task:hover {
+      background-color: rgb(255, 209, 60);
+      border-radius: 10px;
+      transition: background-color 1s;
+}
+    
+textarea.task:focus {
+      border-bottom: 1px solid #000; 
+      outline: none;
+}
+
+@keyframes toast {
+      0% {
+        left: -300px; 
+        top: 20px;    
+      }
+      50% {
+        left: 20px;  
+        top: 20px;
+      }
+      100% {
+            left: -300px; 
+            top: 20px;   
+      }
+}
+    
+#toast {
+      max-width: 200px;
+      display: none; 
+      position: fixed; 
+      left: -300px; 
+      top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      animation-name: toast;
+      animation-duration: 3s;
+      animation-fill-mode: forwards; 
+}
+    
+.menu {
+      display: none;
+}
+
+
+
+@media (min-width: 320px) {
+
+      h1 {
+            padding: 10px;
+            font-size: 30px;
+      }
+
+      h2 {
+            font-size: 20px;
+      }
+
+      #main {
+            display: grid;
+            gap: 20px;
+            grid-template-areas: 
+            "to-do"
+            "done" ;
+      }
+
+      #container-list {grid-area: to-do;}
+      #container-done {grid-area: done;}
+
+      #container-list, #container-done {
+            width: 100%;
+            min-height: 300px;
+            text-align: center;
+      }
+
+      nav a {
+            display: none;
+      }
+
+      .menu {
+            display: block;
+      }
+}
+
+@media (min-width: 576px) {
+      h1 {
+            text-align: center;  
+            font-size: 35px;  
+            padding: 10px;
+      }
+      
+      h2 {
+            font-size: 25px;
+      }
+      
+      #main {
+            display: flex;
+            justify-content: space-evenly;
+      }
+      
+      #container-list {
+            display: block;
+            width: 45%;
+      }
+      
+      #container-done {
+            display: block;
+            width: 45%;
+      }
+      
+      .task-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+      }
+}
+
+@media (min-width: 768px) {
+      button {
+            font-size: 20px;
+      }
+
+      textarea.task {
+            font-size: 20px;
+      }
+}
+
+@media (min-width: 992px) {
+      h1 {
+            padding: 15px;
+            font-size: 45px;
+      }
+
+      h2 {
+            font-size: 35px;
+      }
+
+      button {
+            font-size: 25px;
+      }
+
+      textarea.task {
+            font-size: 20px;
+      }
+}
+
+@media (min-width: 1200px) {
+      h1 {
+            padding: 15px;
+            font-size: 50px;
+      }
+
+      h2 {
+            font-size: 40px;
+      }
+
+      button {
+            font-size: 30px;
+      }
+
+      textarea.task {
+            font-size: 25px;
+      }
+}
